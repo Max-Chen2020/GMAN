@@ -6,8 +6,8 @@ import numpy as np
 import tensorflow as tf
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--time_slot', type = int, default = 5,
-                    help = 'a time step is 5 mins')
+parser.add_argument('--time_slot', type = int, default = 15,
+                    help = 'a time step is 15 mins')
 parser.add_argument('--P', type = int, default = 12,
                     help = 'history steps')
 parser.add_argument('--Q', type = int, default = 12,
@@ -34,13 +34,13 @@ parser.add_argument('--learning_rate', type=float, default = 0.001,
                     help = 'initial learning rate')
 parser.add_argument('--decay_epoch', type=int, default = 5,
                     help = 'decay epoch')
-parser.add_argument('--traffic_file', default = 'data/PeMS.h5',
+parser.add_argument('--traffic_file', default = 'data/flow_melb.h5',
                     help = 'traffic file')
-parser.add_argument('--SE_file', default = 'data/SE(PeMS).txt',
+parser.add_argument('--SE_file', default = 'data/SE(Melb).txt',
                     help = 'spatial emebdding file')
-parser.add_argument('--model_file', default = 'data/GMAN(PeMS)',
+parser.add_argument('--model_file', default = 'data/GMAN(Melb)',
                     help = 'save the model to disk')
-parser.add_argument('--log_file', default = 'data/log(PeMS)',
+parser.add_argument('--log_file', default = 'data/log(Melb)',
                     help = 'log file')
 args = parser.parse_args()
 
